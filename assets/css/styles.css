@@ -1,0 +1,300 @@
+
+/*------------
+ 	
+ 	General
+
+--------------*/
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	font:16px "Open Sans" san-serif;
+}
+body{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+@keyframes slidefade{
+	100%{
+		opacity: 1;
+		margin-top: 0;
+	}
+}
+h1{
+	font: bold 60px "Quicksand", san-serif;
+}
+h3{
+	font: bold 48px "Quicksand", san-serif;
+}
+ul{
+	list-style: none;
+}
+hr{
+	margin: 10px;
+	margin-bottom: 30px;
+	width: 250px;
+	height: 2px;
+	background-color: rgba(63, 191, 99, 0.93);
+	border:0;
+}
+.grid{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+section:not(.main):nth-child(even){
+	background-color: #f5f5f5;
+}
+section{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.button{
+	position:relative;
+	cursor: pointer;
+}
+.button:hover{
+	top: 2px;
+	
+}
+.button:active{
+	top: 6px;
+}
+a{
+	text-decoration: none;
+	opacity: 0.6;
+}
+a:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+@media (max-width: 800px){
+	section{
+		padding: 30px 10px;
+	}
+	.bar{
+		padding: 10px 30px;
+		flex-direction: column;
+	}
+	.grid{
+		flex-direction: column;
+	}
+}
+
+/*------------
+ 	
+ 	Nav Bar
+
+--------------*/
+.bar{
+	position:absolute;
+	z-index: 1;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px 0;
+	opacity: 0;
+	margin-top: 10px;
+	animation: 1s slidefade 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+.item{
+	padding: 15px;
+	color: white;	
+}
+#Logo{
+	font-weight: 500;
+	font-size: 200%;
+	margin-right: -15px;
+}
+.two{
+	margin-right: 15px;
+}
+/*------------
+ 	
+ 	Main Page
+
+--------------*/
+.main{
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.content-area{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+	opacity: 0;
+	animation: 1s slidefade 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+	color:white;
+	margin-top: 10px;
+}
+.main .button{
+	font: bold 48px "Quicksand", san-serif;
+	box-shadow: 0 6px rgba(23, 62, 221, 0.6);
+	background-color: rgba(23, 62, 221, 0.85);
+	padding: 10px 30px;
+	border-radius: 5px;
+}
+.main .button:hover{
+	box-shadow: 0 4px rgba(23, 62, 221, 0.6);
+}
+.main .button:active{
+	box-shadow: 0 0 rgba(23, 62, 221, 0.6);
+}
+.background-image{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-color: #80a3db;
+	z-index: -1;
+}
+@media (max-width: 800px){
+	.main .button ,.main *{
+		font-size: 36px;
+		padding: 10px 20px;
+	}
+}
+/*------------
+ 	
+ 	Second Page
+
+--------------*/
+section h3{
+	margin-top: 100px;
+}
+section p{
+	margin:20px;
+	line-height: 2;
+	padding: 0 20px;
+}
+.second .grid li{
+	height:350px;
+	padding: 10px;
+	background-clip: content-box;
+	background-size: cover;
+	background-position: center;
+}
+.second .grid li.small{
+	flex-basis: 30%;
+}
+.second .grid li.large{
+	flex-basis: 70%;
+}
+@media (max-width: 1100px){
+	.second .grid li.small,
+	.second .grid li.large{
+	flex-basis: 50%;
+	}
+}
+/*------------
+ 	
+ 	Third Page
+
+--------------*/
+.three .grid li{
+	padding: 50px;
+	flex-basis: 50%;
+	text-align: center;
+}
+.three .grid li i{
+	margin: 50px;
+	color: rgba(110, 63, 191, 0.93);
+} 
+.three .grid li h4{
+	font: bold 36px "Quicksand";
+	color:gray;
+	margin:25px 0;
+}
+@media (max-width: 800px){
+	.three{
+		flex-direction: column;
+	}
+}
+ /*------------
+ 	
+ 	fourth Page
+
+--------------*/
+.four .quote{
+	font-weight: 300;
+	font-size: 25px;
+	line-height: 1.5;
+	margin: 10px 10px;
+	text-align: center;
+}
+.contact form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 70%;
+}
+.contact .button{
+	font: bold 18px "Quicksand", san-serif;
+	color:white;
+	padding: 15px 42px;
+	background-color: rgba(68, 147, 237, 0.93);
+	box-shadow: 0 6px rgba(68, 147, 237, 0.6);
+	border-radius: 2px;
+}
+.button:hover{
+	box-shadow: 0 4px rgba(68, 147, 237, 0.6);
+}
+.button:active{
+	box-shadow: 0 0 rgba(68, 147, 237, 0.6);
+}
+.contact input{
+	margin: 30px;
+	padding: 15px;
+	font-size: 18px;
+	flex:1;
+}
+@media (max-width: 800px){
+	.four .quote{
+		font-size: 20px;
+	}
+	.contact input{
+	flex-basis: 100%;
+	width: 100%;
+	}
+} 
+/*------------
+ 	
+ 	footer
+
+--------------*/
+footer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgba(71, 113, 34, 0.81);
+	color: #fff;
+	padding: 10px;
+}
+footer ul{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+footer ul li{
+	margin-left: 20px;
+}
+@media (max-width: 800px){
+	footer{
+		flex-direction: column;
+	}
+	footer ul {
+		flex-basis: 100%;
+	} 
+}
